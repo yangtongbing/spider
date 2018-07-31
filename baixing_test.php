@@ -1,5 +1,6 @@
 <?php
 require_once './vendor/autoload.php';
+require_once './simple_html_dom.php';
 
 header('Content-Type:text/html;charset=utf8');
 $url = "http://china.baixing.com/jinrongfuwu/?page=2";
