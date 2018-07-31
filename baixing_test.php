@@ -13,29 +13,28 @@ $url = "http://china.baixing.com/jinrongfuwu/?page=2";
 \phpspider\core\requests::set_header("Referer", "http://beijing.baixing.com");
 $html = \phpspider\core\requests::get($url);
 // 选择器规则
-$selector = "//ul[contains(@class,'list-ad-items')]//li/div/div[0]/span/button/@data-contact";
+$selector = "//ul[contains(@class,'list-ad-items')]//li/div";
 // 提取结果
 $result = \phpspider\core\selector::select($html, $selector);
-var_dump($result);
-exit;
+
 if ($result) {
+    $html = new simple_html_dom();
     $temp = [];
     foreach ($result as $value) {
-        if ($i == 0) {
-            preg_match_all('/[http|ftp|https]{1,}:\/\/?[a-zA-Z0-9.-]*\/*/', $value, $arr);
-            if ($arr) {
-                $temp['city'] = $arr;
-                $i++;
-            }
-        } else {
-            preg_match_all('/m\d+/', $value, $arr);
-            if ($arr) {
-                $temp['type'] = $arr;
-                $i++;
-            }
+        $html->load($value);
+        $tmp = [
+            'mobile' => '',
+            'company' => '',
+        ];
+        foreach ($html->find('.media-body-title span button') as $value) {
+            $tmp['mobile'] = $value->attr['data-contact'];
         }
+
+        if ($html->find('.ad-item-detail a')) {
+            $tmp['company'] = $html->find('.ad-item-detail a')[0]->plaintext;
+        }
+
+        $temp[] = $tmp;
     }
 }
-
-file_put_contents('data/config.log', json_encode($temp));
-//var_dump($html);exit;
+file_put_contents('data/test.log', json_encode($temp));
