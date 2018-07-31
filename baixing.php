@@ -50,15 +50,16 @@ $spider->on_start = function($spider)
     \phpspider\core\requests::set_cookie('kjj_log_log_id', 15330150931643807553);
     \phpspider\core\requests::set_cookie('BAIDUID', '9B0846D3A1114F3D1B8856A8CB11EE43:FG=1');
     \phpspider\core\requests::set_cookie('HMACCOUNT', '9B57A23D5CEF22AE');
-    \phpspider\core\requests::set_timeout(10);
-    \phpspider\core\requests::set_useragent(
-        array(
-        "Mozilla/4.0 (compatible; MSIE 6.0; ) Opera/UCWEB7.0.2.37/28/",
-        "Opera/9.80 (Android 3.2.1; Linux; Opera Tablet/ADR-1109081720; U; ja) Presto/2.8.149 Version/11.10",
-        "Mozilla/5.0 (Android; Linux armv7l; rv:9.0) Gecko/20111216 Firefox/9.0 Fennec/9.0"
-        )
-    );
-    \phpspider\core\requests::set_referer("http://beijing.baixing.com");
+    \phpspider\core\requests::set_cookie('kjj_log_session_depth', '11');
+//    \phpspider\core\requests::set_timeout(10);
+//    \phpspider\core\requests::set_useragent(
+//        array(
+//        "Mozilla/4.0 (compatible; MSIE 6.0; ) Opera/UCWEB7.0.2.37/28/",
+//        "Opera/9.80 (Android 3.2.1; Linux; Opera Tablet/ADR-1109081720; U; ja) Presto/2.8.149 Version/11.10",
+//        "Mozilla/5.0 (Android; Linux armv7l; rv:9.0) Gecko/20111216 Firefox/9.0 Fennec/9.0"
+//        )
+//    );
+//    \phpspider\core\requests::set_referer("http://beijing.baixing.com");
     \phpspider\core\requests::set_header("Referer", "http://beijing.baixing.com");
 };
 
