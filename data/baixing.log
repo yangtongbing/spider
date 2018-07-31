@@ -1,0 +1,24 @@
+
+[ ╟ыпу Spider ] is started...
+
+  * PHPSpider Version: 2.1.4
+  * Documentation: https://doc.phpspider.org
+  * Task Number: 1
+
+Input "php baixing.php stop" to quit. Start success.
+
+2018-07-31 13:41:48 [debug] Find scan page: http://beijing.baixing.com/
+2018-07-31 13:41:48 [debug] Success download page http://beijing.baixing.com/ in 0.099 s
+2018-07-31 13:41:48 [debug] Success process page http://beijing.baixing.com/ in 0.125 s
+
+[ ╟ыпу Spider ] is started...
+
+  * PHPSpider Version: 2.1.4
+  * Documentation: https://doc.phpspider.org
+  * Task Number: 1
+
+Input "php baixing.php stop" to quit. Start success.
+
+2018-07-31 13:43:02 [debug] Find scan page: http://beijing.baixing.com/
+2018-07-31 13:43:02 [debug] Success download page http://beijing.baixing.com/ in 0.127 s
+2018-07-31 13:43:02 [debug] Success process page http://beijing.baixing.com/ in 0.151 s
