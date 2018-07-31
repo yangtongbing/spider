@@ -12,9 +12,8 @@ $url = "http://china.baixing.com/jinrongfuwu/?page=2";
 \phpspider\core\requests::set_cookie('kjj_log_session_depth', rand(11,99));
 \phpspider\core\requests::set_header("Referer", "http://beijing.baixing.com");
 $html = \phpspider\core\requests::get($url);
-var_dump($html);exit;
 // 选择器规则
-$selector = "//ul[contains(@class,'list-ad-items')]//li";
+$selector = "//ul[contains(@class,'list-ad-items')]//li/div/div[0]/span/button/@data-contact";
 // 提取结果
 $result = \phpspider\core\selector::select($html, $selector);
 var_dump($result);
