@@ -26,6 +26,7 @@ if ($result) {
         $tmp = [
             'mobile' => '',
             'company' => '',
+            'zone' => '',
         ];
         foreach ($html->find('.media-body-title span button') as $value) {
             $tmp['mobile'] = $value->attr['data-contact'];
@@ -34,6 +35,10 @@ if ($result) {
         if ($html->find('.ad-item-detail a')) {
             $tmp['company'] = $html->find('.ad-item-detail a')[0]->plaintext;
         }
+
+        $zone = $html->find('.ad-item-detail')[0]->plaintext;
+        $zone = explode('-', $zone);
+        $tmp['zone'] = trim($zone[0]);
 
         $temp[] = $tmp;
     }
